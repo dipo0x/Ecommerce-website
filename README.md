@@ -1,1 +1,1 @@
-# Eccomerce-website
+# Ecommerce-website
