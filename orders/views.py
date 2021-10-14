@@ -38,9 +38,10 @@ def order_create(request):
                 amounts = int(item['price'] * item['quantity'])
                 list.append(amounts)
             price = sum(list)
+            
             for item in cart:       
                 slug = item['my-slug']
-            #cart.clear()
+            cart.clear()
 
             #EVERYTHING FLUTTERWAVE AND PAYMENT
             auth_token= env('SECRET_KEY')
@@ -76,7 +77,6 @@ def order_create(request):
         form = OrderCreateForm()
     return render(request, 'orders/order/create.html', {'form': form})
 
-from django.http import JsonResponse
 @csrf_exempt
 @require_http_methods(['POST', 'GET'])
 def webhook(request):
