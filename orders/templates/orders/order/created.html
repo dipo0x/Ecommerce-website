@@ -1,0 +1,21 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.js' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.min.js' %}">
+
+   <title>Jummerty Collection | Your Shopping Cart | Thank you
+
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="margin-top: 6%">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="page-header">Thank You For Shopping With Us
+                </h3>
+                <p>Your order has been successfully completed. Your order number is <strong>{{ order.id }}</strong>.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

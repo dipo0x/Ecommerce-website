@@ -1,0 +1,24 @@
+
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.js' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.min.js' %}">
+<title>Jummerty Collection | Checkout</title>
+{% block content %}
+   <center> 
+    <div class="container">
+        <div class="row" style="margin-top: 4%">
+            <div class="col-md-11">
+                <h4 class="page-header">Checkout</h4>
+                <form action="." method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                   <br>
+                    <input type="submit" class="btn btn-primary" value="Submit order">
+                </form>
+            </div>      
+        </div>
+    </div>
+</center>
+{% endblock %}
