@@ -1,11 +1,11 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 app_name = 'shop'
 
 urlpatterns = [
-    url(r'^$', views.product_list, name='product_list'),
-    url(r'^contact/$', views.contact, name='contact'),
-    url(r'^45/(?P<category_slug>[-\w]+)/$', views.product_list, name='product_list_by_category'),
-    url(r'^(?P<slug>[-\w]+)/$', views.product_detail, name='product_detail'),
+    path('', views.product_list, name='product_list'),
+    path('contact/', views.contact, name='contact'),
+    path('45/<slug:category_slug>/', views.product_list, name='product_list_by_category'),
+    path('<slug:slug>/', views.product_detail, name='product_detail'),
 ]
